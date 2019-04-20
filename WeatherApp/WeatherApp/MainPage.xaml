@@ -6,9 +6,14 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label
+            x:Name="weatherLabel"
+           Text="Welcome to Xamarin.Forms!" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
+        <Button x:Name="tapBtn" 
+                Text="Tap Me for Weather"
+                Clicked="TapBtn_Clicked"></Button>
     </StackLayout>
 
 </ContentPage>

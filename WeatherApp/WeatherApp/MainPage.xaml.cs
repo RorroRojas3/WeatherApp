@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using WeatherApp.OpenWeatherAPI;
 
 namespace WeatherApp
 {
@@ -16,6 +17,16 @@ namespace WeatherApp
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private async void TapBtn_Clicked(object sender, EventArgs e)
+        {
+            var weather = new WeatherAPI();
+            OpenWeatherRoot currentWeather = await weather.GetCurrentWeather();
+            if (currentWeather != null)
+            {
+                weatherLabel.Text = "Current Weather: " + currentWeather.Main.Temp.ToString() + " C";
+            }
         }
     }
 }
