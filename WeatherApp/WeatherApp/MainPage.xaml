@@ -4,16 +4,59 @@
              xmlns:local="clr-namespace:WeatherApp"
              x:Class="WeatherApp.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
+    <Grid RowSpacing="1" ColumnSpacing="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="weatherImage"
+               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+        </Image>
         <Label
-            x:Name="weatherLabel"
-           Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-        <Button x:Name="tapBtn" 
-                Text="Tap Me for Weather"
-                Clicked="TapBtn_Clicked"></Button>
-    </StackLayout>
+               Text="Current Temperature"
+               Grid.Row="1" Grid.Column="0"></Label>
+        <Label
+               Text="Minimum Temperature"
+               Grid.Row="1" Grid.Column="1"></Label>
+        <Label
+               Text="Maximum Temperature"
+               Grid.Row="1" Grid.Column="2"></Label>
+        <Label
+               Text="Humidity"
+               Grid.Row="1" Grid.Column="3"></Label>
+
+        <Label x:Name="currentTempLabel"
+                  Grid.Row="2" Grid.Column="0"
+            ></Label>
+        <Label x:Name="minTempLabel"
+                  Grid.Row="2" Grid.Column="1"
+            ></Label>
+        <Label x:Name="maxTempLabel"
+                  Grid.Row="2" Grid.Column="2"
+            ></Label>
+        <Label x:Name="currentHumLabel"
+                  Grid.Row="2" Grid.Column="3"
+            ></Label>
+
+        <Button x:Name="currentWeatherButton"
+                Text="Get Current Weather"
+                Clicked="currentWeatheButton_Clicked"
+                Grid.Row="3" Grid.ColumnSpan="4">
+            
+        </Button>
+
+
+    </Grid>
+
+
 
 </ContentPage>

@@ -5,6 +5,19 @@ using System.Text;
 namespace WeatherApp.OpenWeatherAPI
 {
 
+    public class WeatherIcon
+    {
+        public string ClearSky = "http://openweathermap.org/img/w/01d.png";
+        public string FewClouds = "http://openweathermap.org/img/w/02d.png";
+        public string ScatteredClouds = "http://openweathermap.org/img/w/03d.png";
+        public string BrokenClouds = "http://openweathermap.org/img/w/04d.png";
+        public string ShowerRain = "http://openweathermap.org/img/w/09d.png";
+        public string Rain = "http://openweathermap.org/img/w/10d.png";
+        public string Thunderstorm = "http://openweathermap.org/img/w/11d.png";
+        public string Snow = "http://openweathermap.org/img/w/13d.png";
+        public string Mist = "http://openweathermap.org/img/w/50d.png";
+    }
+
     public class Coord
     {
         public double Lon { get; set; }
