@@ -22,17 +22,19 @@ namespace WeatherApp
         private async void currentWeatheButton_Clicked(object sender, EventArgs e)
         {
             var weather = new WeatherAPI();
-            OpenWeatherRoot currentWeather = await weather.GetCurrentWeather();
+            var city = enteredCity.Text;
+            OpenWeatherRoot currentWeather = await weather.GetCurrentWeather(city);
             if (currentWeather != null)
-            {
+            { 
                 // Gets the correponding image source
                 string imageSource = weather.GetWeatherImage(currentWeather);
                 weatherImage.Source = imageSource;
 
+
                 // Changes the text on the corresponding fields 
                 currentTempLabel.Text = currentWeather.Main.Temp.ToString();
-                maxTempLabel.Text = currentWeather.Main.Temp_max.ToString();
                 minTempLabel.Text = currentWeather.Main.Temp_min.ToString();
+                maxTempLabel.Text = currentWeather.Main.Temp_max.ToString();
                 currentHumLabel.Text = currentWeather.Main.Humidity.ToString();
 
 

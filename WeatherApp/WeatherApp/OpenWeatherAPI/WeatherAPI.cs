@@ -11,14 +11,14 @@ namespace WeatherApp.OpenWeatherAPI
 {
     public class WeatherAPI
     {
-        public async Task<OpenWeatherRoot> GetCurrentWeather()
+        public async Task<OpenWeatherRoot> GetCurrentWeather(string city)
         {
             try
             {
                 HttpClient client = new HttpClient();
                 string units = "metric";
                 string apiKey = "9d3692f574b8ba802d57747928cf6442";
-                string apiURL = string.Format("http://api.openweathermap.org/data/2.5/weather?q=Douglasville&units={0}&appid={1}", units, apiKey);
+                string apiURL = string.Format("http://api.openweathermap.org/data/2.5/weather?q={0}&units={1}&appid={2}", city, units, apiKey);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage response = await client.GetAsync(apiURL);

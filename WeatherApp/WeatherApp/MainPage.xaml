@@ -2,37 +2,125 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:WeatherApp"
-             x:Class="WeatherApp.MainPage">
+             x:Class="WeatherApp.MainPage"
+             >
 
-    <Grid RowSpacing="1" ColumnSpacing="1">
+    <Grid VerticalOptions="StartAndExpand" 
+          Padding="10" RowSpacing="60" >
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="25*"></ColumnDefinition>
+            <ColumnDefinition Width="25*"></ColumnDefinition>
+            <ColumnDefinition Width="25*"></ColumnDefinition>
+            <ColumnDefinition Width="25*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <Image x:Name="weatherImage"
-               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+               Source=""
+               ScaleX="5"
+               ScaleY="5"
+               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+              HorizontalOptions="Center"
+               >
+                
         </Image>
-        <Label
+
+        <Label Text="Current Temperature"
+               Grid.Row="1" Grid.Column="0"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+               ></Label>
+        <Label Text="Mininum Temperature"
+               Grid.Row="1" Grid.Column="2"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+               >
+
+        </Label>
+
+        <Label x:Name="currentTempLabel"
+               Text="null"
+                  Grid.Row="2" Grid.Column="0"
+                Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+            ></Label>
+        <Label x:Name="minTempLabel"
+               Text="null"
+                  Grid.Row="2" Grid.Column="2"
+               Grid.ColumnSpan="2"
+            HorizontalOptions="Center"
+            ></Label>
+
+        <Label Text="Max Temperature"
+               Grid.Row="3" Grid.Column="0"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center">
+        </Label>
+
+        <Label Text="Humidity"
+              Grid.Row="3" Grid.Column="2"
+              Grid.ColumnSpan="2"
+               HorizontalOptions="Center"></Label>
+
+        <Label x:Name="maxTempLabel"
+               Text="null"
+                  Grid.Row="4" Grid.Column="0"
+                Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+            ></Label>
+        <Label x:Name="currentHumLabel"
+               Text="null"
+                  Grid.Row="4" Grid.Column="2"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+            ></Label>
+
+        <Label  
+                Text="Enter city"
+                Grid.Row="5" Grid.Column="0" 
+            Grid.ColumnSpan="2"
+               VerticalOptions="Center"
+            HorizontalOptions="Center"
+               ></Label>
+
+        <Entry
+                x:Name="enteredCity"
+                x:DataType="x:String"
+                VerticalOptions="Center"
+                Grid.Row="5" Grid.Column="2" 
+            Grid.ColumnSpan="2" >
+        </Entry>
+
+        <Button x:Name="currentWeatherButton"
+                Text="Get Weather"
+                Clicked="currentWeatheButton_Clicked"
+                Grid.Row="6" Grid.ColumnSpan="4">
+
+        </Button>
+
+        <!--<Label
                Text="Current Temperature"
-               Grid.Row="1" Grid.Column="0"></Label>
+               Grid.Row="1" Grid.Column="0"
+               Grid.RowSpan="2"></Label>
         <Label
                Text="Minimum Temperature"
-               Grid.Row="1" Grid.Column="1"></Label>
+               Grid.Row="1" Grid.Column="1"
+               Grid.RowSpan="2"></Label>
         <Label
                Text="Maximum Temperature"
-               Grid.Row="1" Grid.Column="2"></Label>
+               Grid.Row="1" Grid.Column="2"
+               Grid.RowSpan="2"></Label>
         <Label
                Text="Humidity"
-               Grid.Row="1" Grid.Column="3"></Label>
+               Grid.Row="1" Grid.Column="3"
+               Grid.RowSpan="2"></Label>
 
         <Label x:Name="currentTempLabel"
                   Grid.Row="2" Grid.Column="0"
@@ -43,16 +131,18 @@
         <Label x:Name="maxTempLabel"
                   Grid.Row="2" Grid.Column="2"
             ></Label>
-        <Label x:Name="currentHumLabel"
-                  Grid.Row="2" Grid.Column="3"
-            ></Label>
+        
+
+        
+
+
 
         <Button x:Name="currentWeatherButton"
                 Text="Get Current Weather"
                 Clicked="currentWeatheButton_Clicked"
-                Grid.Row="3" Grid.ColumnSpan="4">
+                Grid.Row="4" Grid.ColumnSpan="4">
             
-        </Button>
+        </Button>-->
 
 
     </Grid>
